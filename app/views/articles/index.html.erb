@@ -10,5 +10,7 @@
 <br>
 <p>
 
-<%= link_to "Create a new article", new_article_path, class: "article_new" %>
+<% if logged_in? %>
+  <%= link_to "Create a new article", new_article_path, class: "article_new" %>
+<% end %>
 <%= link_to "View site tags", tags_path %>

@@ -22,7 +22,9 @@
 <%= render partial: 'comment', collection: @article.comments %><br><hr>
 
 <%= link_to "<< Back to articles list", articles_path, class: "articles_path" %>
-<%= link_to "Update article", edit_article_path(@article) %>
-<%= link_to "Delete article", article_path(@article), method: :delete, \
-    data: {confirm: "Really delete the article?"}, class: "article_path" %>
+<% if logged_in? %>
+  <%= link_to "Update article", edit_article_path(@article) %>
+  <%= link_to "Delete article", article_path(@article), method: :delete, \
+      data: {confirm: "Really delete the article?"}, class: "article_path" %>
+<% end %>
 
